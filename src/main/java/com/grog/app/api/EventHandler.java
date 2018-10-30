@@ -3,7 +3,6 @@ package com.grog.app.api;
 import java.util.function.Function;
 
 public abstract class EventHandler<T> extends EventKeyable {
-
     private Function<Event<T>, Event<T>> handler;
 
     EventHandler(EventKey key, Function<Event<T>, Event<T>> handler) {

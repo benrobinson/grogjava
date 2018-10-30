@@ -1,7 +1,6 @@
 package com.grog.app.api;
 
 public class EventKey<T, K> {
-
     private K value;
 
     EventKey(K value) {
@@ -13,6 +12,6 @@ public class EventKey<T, K> {
     }
 
     public boolean equals(EventKey<T, K> eventKey) {
-        return this.value == eventKey.getValue();
+        return value == eventKey.getValue();
     }
 }

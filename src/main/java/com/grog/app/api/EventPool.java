@@ -6,7 +6,6 @@ import java.util.Set;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public abstract class EventPool {
-
     private Hashtable<EventKey, LinkedBlockingQueue<Event>> events;
     private Hashtable<EventKey, LinkedBlockingQueue<EventHandler>> handlers;
 

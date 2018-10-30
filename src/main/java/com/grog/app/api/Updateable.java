@@ -1,9 +1,7 @@
 package com.grog.app.api;
 
-import java.util.concurrent.Callable;
+import java.util.function.Function;
 
 public interface Updateable {
-
-    public Updateable update(Callable<Updateable> update);
-
+    Updateable update(Function<Updateable, Updateable> u);
 }

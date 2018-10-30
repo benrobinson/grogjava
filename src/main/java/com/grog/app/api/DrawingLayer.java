@@ -2,21 +2,21 @@ package com.grog.app.api;
 
 import java.util.List;
 
-public class DrawingLayer<T extends Output> extends Drawable<T> {
+public class DrawingLayer<T extends Output> implements Drawable<T> {
+    private T output;
+    private List<Drawable<T>> drawables = null;
 
-    private List<Drawable> drawables = null;
-
-    public DrawingLayer add(Drawable<T> drawable) {
+    public DrawingLayer<T> add(Drawable<T> drawable) {
         drawables.add(drawable.setOutput(output));
         return this;
     }
 
-    public DrawingLayer remove(Drawable drawable) {
+    public DrawingLayer<T> remove(Drawable<T> drawable) {
         drawables.remove(drawable);
         return this;
     }
 
-    public DrawingLayer draw() {
+    public DrawingLayer<T> draw() {
         while(drawables.iterator().hasNext()) {
             drawables.iterator().next().draw();
         }
@@ -24,7 +24,7 @@ public class DrawingLayer<T extends Output> extends Drawable<T> {
         return this;
     }
 
-    public DrawingLayer setOutput(T o) {
+    public DrawingLayer<T> setOutput(T o) {
         output = o;
         return this;
     }

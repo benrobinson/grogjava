@@ -45,7 +45,7 @@ public class PlayerEntity<T extends Output> extends Entity<T, Integer> {
     return this;
   }
 
-  public PlayerEntity update(Function<PlayerEntity, PlayerEntity> u) {
+  public Updateable update(Function<Updateable, Updateable> u) {
     return u.apply(this);
   }
 }
